@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class ProductController extends Controller
 {
@@ -20,7 +19,7 @@ class ProductController extends Controller
     }
     public function show($id)
     {
-        //Mengambil Produk Berdasarkan Id
+        // Mengambil Produk Berdasarkan Id
         $product = collect($this->products)->firstWhere('id', $id);
         return view('products.show', compact('products'));
     }
