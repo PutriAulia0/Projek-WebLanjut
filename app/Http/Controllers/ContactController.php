@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreContactRequest;
 use Illuminate\Http\Request;
+
 
 class ContactController extends Controller
 {
@@ -11,16 +13,10 @@ class ContactController extends Controller
         return view('contact.form');
     }
 
-    public function submitForm(Request $request)
+    public function submitForm(StoreContactRequest $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:15',
-            'message' => 'required|string',
-        ]);
-
-        // Proses data (misalnya, kirim email atau simpan ke database)
+        // Data sudah tervalidasi
+        // Proses data (misalnya, simpan ke database atau kirim email)
 
         return redirect()->route('contact.form')->with('success', 'Pesan Anda telah dikirim!');
     }

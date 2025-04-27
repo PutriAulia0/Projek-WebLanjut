@@ -3,19 +3,20 @@
 <head> 
     <meta charset="UTF-8">
     <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
 </head>
 
 <body>
     <h1>Form Tambah User</h1>
 
      @if (session('success'))
-    <p style="color: green;"> {{ session('success') }} </p>
+        <p style="color: green;"> {{ session('success') }} </p>
     @endif
 
     @if ($errors ->any())
     <div style="color:red;">
         @foreach ( $errors->all() as $error )
-        <li>{{ $error }}</li>  
+            <li>{{ $error }}</li>  
         @endforeach
     </div>
     @endif

@@ -17,10 +17,5 @@ class ProductController extends Controller
         $products = $this->products;
         return view('products.index', compact('products'));
     }
-    public function show($id)
-    {
-        // Mengambil Produk Berdasarkan Id
-        $product = collect($this->products)->firstWhere('id', $id);
-        return view('products.show', compact('products'));
-    }
+    
 }
