@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use Livewire\Volt\Volt;
 
+
 Route::get('/products/{id}', function () {
     return view('welcome');
 });
@@ -22,5 +23,11 @@ Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact
 
 Route::get('/admin', [AdminController::class, 'showForm'])->name('admin.form');
 Route::post('/admin', [AdminController::class, 'storeForm'])->name('admin.store');
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+
 
 
