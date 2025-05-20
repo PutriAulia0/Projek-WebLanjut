@@ -1,56 +1,64 @@
 @extends('Layouts.app')
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-@section('title', 'Home')
+@section('title', 'Beranda')
 
 @section('content')
-<style>
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 70vh;
-        background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
-        color: white;
-        text-align: center;
-        padding: 0 1rem;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(102, 166, 255, 0.4);
-    }
-    .hero h1 {
-        font-weight: 700;
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        text-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    .hero p {
-        font-size: 1.25rem;
-        max-width: 600px;
-        margin-bottom: 2rem;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .btn-primary-custom {
-        background-color: #335eea;
-        border: none;
-        padding: 0.75rem 2rem;
-        font-size: 1.1rem;
-        border-radius: 50px;
-        transition: background-color 0.3s ease;
-        box-shadow: 0 5px 15px rgba(51, 94, 234, 0.4);
-    }
-    .btn-primary-custom:hover {
-        background-color: #2546c1;
-    }
-</style>
+<!-- Hero Section -->
+<div class="container mx-auto px-4 mt-6">
+  <div class="bg-green-100 shadow-md p-6 rounded-lg text-center">
+    <h1 class="text-3xl font-bold text-green-800 mb-4">
+      Selamat Datang di <span class="text-green-900">SampahBijak</span>
+    </h1>
+    <p class="text-gray-700 text-base md:text-lg">
+      Bersama kita wujudkan lingkungan bersih dan sehat melalui pengelolaan sampah yang bijak dan berkelanjutan.
+    </p>
+    <button class="mt-6 inline-flex items-center bg-green-700 text-white px-6 py-2 rounded hover:bg-green-600 transition duration-200">
+      Pelajari Cara Daur Ulang
+    </button>
+  </div>
 
-<div class="hero">
-    <h1>Selamat Datang di Website Cute Cats</h1>
-    <p>Ini adalah website berupa berbagai macam jenis-jenis kucing diseluruh dunia. Jelajahi website dan temukan berbagai pengetahuan menarik mengenai bebrbagai kucing di dalamnya!</p>
-    <a href="{{ route('about') }}" class="btn btn-primary-custom">Telusuri lebih lanjut</a>
+  <!-- Mengapa Pengelolaan Itu Penting -->
+  <div class="container mx-auto px-4 mt-10">
+    <section class="bg-white shadow-md p-6 rounded-lg">
+      <h2 class="text-2xl font-semibold text-green-700 mb-3">Mengapa Pengelolaan Sampah Itu Penting?</h2>
+      <p class="text-gray-700 text-justify">
+        Pengelolaan sampah yang baik dapat mengurangi pencemaran lingkungan, menjaga kesehatan masyarakat,
+        serta mendukung ekonomi sirkular melalui kegiatan daur ulang dan pengurangan sampah.
+      </p>
+    </section>
+  </div>
+  <!-- Jenis Sampah -->
+  <div class="container mx-auto px-4 mt-10">
+    <section class="bg-green-50 shadow-md p-6 rounded-lg">
+      <h2 class="text-2xl font-semibold text-green-700 mb-4 text-center">Jenis Sampah & Cara Mengolahnya</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded shadow text-center">
+          <h3 class="font-bold text-green-600 mb-2">Sampah Organik</h3>
+          <p class="text-sm text-gray-700">Dapat dijadikan kompos atau bahan biogas alami.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+          <h3 class="font-bold text-green-600 mb-2">Sampah Anorganik</h3>
+          <p class="text-sm text-gray-700">Bisa didaur ulang menjadi barang baru dan bermanfaat.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+          <h3 class="font-bold text-green-600 mb-2">Sampah B3</h3>
+          <p class="text-sm text-gray-700">Perlu penanganan khusus karena bersifat berbahaya.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Komunitas -->
+  <div class="container mx-auto px-4 mt-10">
+    <section class="bg-white shadow-md p-6 rounded-lg text-center">
+      <h2 class="text-2xl font-semibold text-green-700 mb-3">Bergabung Bersama Komunitas</h2>
+      <p class="text-gray-700 mb-4 text-base">
+        Ikut serta dalam gerakan peduli sampah dan menjadi bagian dari perubahan lingkungan yang lebih baik.
+      </p>
+      <button class="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-600 transition duration-200">
+        Daftar Sekarang
+      </button>
+    </section>
+  </div>
 </div>
 @endsection

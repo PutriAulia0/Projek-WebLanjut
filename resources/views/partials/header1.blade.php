@@ -1,28 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm custom-navbar">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="{{ route('home') }}">
-    <img src="{{ asset('images/CatLovers.png') }}" alt="CatLovers Logo" style="height: 40px;">
-    Cute Cats
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<header class="bg-green-700 text-white shadow-md">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold">SampahBijak</a>
+    <button class="md:hidden block" id="nav-toggle">
+      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('home') ? 'active fw-bold' : '' }}" href="{{ route('home') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('about') ? 'active fw-bold' : '' }}" href="{{ route('about') }}">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('contact') ? 'active fw-bold' : '' }}" href="{{ route('contact') }}">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('gallery') ? 'active fw-bold' : '' }}" href="{{ route('gallery') }}">Gallery</a>
-        </li>
-      </ul>
-    </div>
+    <nav id="nav-menu" class="hidden md:flex space-x-6 text-sm font-medium">
+      <a href="#" class="hover:text-green-200">Home</a>
+      <a href="#" class="hover:text-green-200">Tentang</a>
+      <a href="#" class="hover:text-green-200">Artikel</a>
+      <a href="#" class="hover:text-green-200">Kontak</a>
+    </nav>
   </div>
-</nav>
+
+  <!-- Mobile menu -->
+  <div id="nav-mobile" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-green-600">
+    <a href="#" class="block hover:text-green-100">Home</a>
+    <a href="#" class="block hover:text-green-100">Tentang</a>
+    <a href="#" class="block hover:text-green-100">Artikel</a>
+    <a href="#" class="block hover:text-green-100">Kontak</a>
+  </div>
+</header>
+
+<script>
+  // Toggle menu for mobile
+  document.getElementById('nav-toggle').addEventListener('click', function () {
+    const navMenu = document.getElementById('nav-menu');
+    const navMobile = document.getElementById('nav-mobile');
+    navMobile.classList.toggle('hidden');
+  });
+</script>
